@@ -1,0 +1,53 @@
+--TEST--
+"timediff with the 'in' vocabulary" filter
+
+--TEMPLATE--
+{{ 'now'|date_modify("+1 second")|time_diff }}
+
+{{ 'now'|date_modify("+5 seconds")|time_diff }}
+
+{{ 'now'|date_modify("+1 minute")|time_diff }}
+
+{{ 'now'|date_modify("+5 minutes")|time_diff }}
+
+{{ 'now'|date_modify("+1 hour")|time_diff }}
+
+{{ 'now'|date_modify("+9 hours")|time_diff }}
+
+{{ 'now'|date_modify("+1 day")|time_diff }}
+
+{{ 'now'|date_modify("+5 days")|time_diff }}
+
+{{ 'now'|date_modify("+1 month")|time_diff }}
+
+{{ 'now'|date_modify("+6 months")|time_diff }}
+
+{{ 'now'|date_modify("+1 year")|time_diff }}
+
+{{ 'now'|date_modify("+3 years")|time_diff }}
+
+--DATA--
+return []
+
+--EXPECT--
+in 4 seconds
+
+in 59 seconds
+
+in 4 minutes
+
+in 59 minutes
+
+in 8 hours
+
+in 23 hours
+
+in 4 days
+
+in 29 days
+
+in 5 months
+
+in 11 months
+
+in 2 years

@@ -1,0 +1,55 @@
+--TEST--
+"timediff with the 'ago' vocabulary" filter
+
+--TEMPLATE--
+{{ 'now'|date_modify("-1 second")|time_diff }}
+
+{{ 'now'|date_modify("-5 seconds")|time_diff }}
+
+{{ 'now'|date_modify("-1 minute")|time_diff }}
+
+{{ 'now'|date_modify("-5 minutes")|time_diff }}
+
+{{ 'now'|date_modify("-1 hour")|time_diff }}
+
+{{ 'now'|date_modify("-9 hours")|time_diff }}
+
+{{ 'now'|date_modify("-1 day")|time_diff }}
+
+{{ 'now'|date_modify("-5 days")|time_diff }}
+
+{{ 'now'|date_modify("-1 month")|time_diff }}
+
+{{ 'now'|date_modify("-6 months")|time_diff }}
+
+{{ 'now'|date_modify("-1 year")|time_diff }}
+
+{{ 'now'|date_modify("-3 years")|time_diff }}
+
+--DATA--
+return []
+
+--EXPECT--
+1 second ago
+
+5 seconds ago
+
+1 minute ago
+
+5 minutes ago
+
+1 hour ago
+
+9 hours ago
+
+1 day ago
+
+5 days ago
+
+1 month ago
+
+6 months ago
+
+1 year ago
+
+3 years ago
